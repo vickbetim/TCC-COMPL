@@ -1,0 +1,63 @@
+DROP TABLE IF EXISTS tb_imagens_produtos;
+DROP TABLE IF EXISTS tb_compras_produtos;
+DROP TABLE IF EXISTS tb_compras;
+DROP TABLE IF EXISTS  tb_clientes;
+DROP TABLE IF EXISTS tb_produtos;
+DROP TABLE IF EXISTS  tb_cidades;
+
+CREATE TABLE tb_cidades (
+cod_cidade INT AUTO_INCREMENT PRIMARY KEY,
+nome_cidade VARCHAR(50) NOT NULL,  
+estado CHAR(2) CHECK (estado IN ('PR'))
+);
+CREATE TABLE tb_clientes(
+cod_cliente INT AUTO_INCREMENT PRIMARY KEY,
+cod_cidade INT,
+nome VARCHAR(50) NOT NULL,
+telefone BIGINT(11) ZEROFILL,
+gmail VARCHAR(50),
+cpf BIGINT(11) ZEROFILL NOT NULL,
+tipocliente VARCHAR(1) DEFAULT 'C' CHECK (tipocliente IN ('C', 'F')),
+ativo VARCHAR(1) DEFAULT 'S' CHECK (ativo IN ('S', 'N')),
+complemento VARCHAR(11),
+rua VARCHAR(50),
+numero BIGINT(11) ZEROFILL,
+bairro VARCHAR(50),
+senha VARCHAR(32) NOT NULL,
+FOREIGN KEY (cod_cidade) REFERENCES tb_cidades(cod_cidade)
+);
+CREATE TABLE tb_compras (
+cod_compra INT AUTO_INCREMENT PRIMARY KEY,
+cod_cliente INT,
+cod_entrega VARCHAR(50),
+valor_entrega FLOAT(5,2),
+tipo_pagamento VARCHAR(8) DEFAULT 'DINHEIRO' CHECK (tipo_pagamento IN ('DINHEIRO')),
+data_compra DATE,
+FOREIGN KEY (cod_cliente) REFERENCES tb_clientes(cod_cliente)
+);
+ CREATE TABLE tb_produtos (
+cod_produto INT AUTO_INCREMENT PRIMARY KEY,
+ativo VARCHAR(1) CHECK (ativo IN ('S', 'N')),
+valor FLOAT(5,2),
+tamanho INT,
+descricao VARCHAR(100));
+
+CREATE TABLE tb_imagens_produtos(
+cod_imagem_produto INT AUTO_INCREMENT PRIMARY KEY,
+cod_produto INT,
+imagem_produto VARCHAR(255),
+FOREIGN KEY (cod_produto) REFERENCES tb_produtos(cod_produto)
+);
+
+ CREATE TABLE tb_compras_produtos (
+compra_produto INT AUTO_INCREMENT,
+cod_compra INTEGER,
+cod_produto INTEGER,
+quantidade INTEGER,
+valor FLOAT(5,2),
+PRIMARY KEY(cod_compra_produto),
+FOREIGN KEY (cod_compra) REFERENCES tb_compras(cod_compra),
+FOREIGN KEY (cod_produto) REFERENCES tb_produtos(cod_produto)
+);
+
+COMMIT;
