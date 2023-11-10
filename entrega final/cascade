@@ -1,0 +1,6 @@
+(produtos)
+ALTER TABLE tb_imagens_produtos
+ADD CONSTRAINT fk_produto
+FOREIGN KEY (cod_produto)
+REFERENCES tb_produtos (cod_produto)
+ON DELETE CASCADE;
