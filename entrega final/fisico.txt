@@ -24,6 +24,7 @@ rua VARCHAR(50),
 numero BIGINT(11) ZEROFILL,
 bairro VARCHAR(50),
 senha VARCHAR(32) NOT NULL,
+token VARCHAR(255) NOT NULL,
 FOREIGN KEY (cod_cidade) REFERENCES tb_cidades(cod_cidade)
 );
 CREATE TABLE tb_compras (
