@@ -23,8 +23,7 @@ complemento VARCHAR(11),
 rua VARCHAR(50),
 numero BIGINT(11) ZEROFILL,
 bairro VARCHAR(50),
-senha VARCHAR(32) NOT NULL,
-token VARCHAR(255) NOT NULL,
+hash_senha VARCHAR(32) NOT NULL,
 FOREIGN KEY (cod_cidade) REFERENCES tb_cidades(cod_cidade)
 );
 CREATE TABLE tb_compras (
@@ -39,9 +38,9 @@ FOREIGN KEY (cod_cliente) REFERENCES tb_clientes(cod_cliente)
  CREATE TABLE tb_produtos (
 cod_produto INT AUTO_INCREMENT PRIMARY KEY,
 ativo VARCHAR(1) CHECK (ativo IN ('S', 'N')),
-valor FLOAT(5,2),
+valor FLOAT(10,2),
 tamanho INT,
-descricao VARCHAR(100));
+descricao VARCHAR(255));
 
 CREATE TABLE tb_imagens_produtos(
 cod_imagem_produto INT AUTO_INCREMENT PRIMARY KEY,
@@ -51,7 +50,7 @@ FOREIGN KEY (cod_produto) REFERENCES tb_produtos(cod_produto)
 );
 
  CREATE TABLE tb_compras_produtos (
-compra_produto INT AUTO_INCREMENT,
+cod_compra_produto INT AUTO_INCREMENT,
 cod_compra INTEGER,
 cod_produto INTEGER,
 quantidade INTEGER,
