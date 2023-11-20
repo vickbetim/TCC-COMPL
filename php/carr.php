@@ -44,11 +44,70 @@ if (isset($_GET['acao'])) {
         }
     }
 }
+
 ?>
 <!DOCTYPE html>
 <html>
 
 <head>
+    <style> body {
+            font-family: Arial, sans-serif;
+        }
+
+        h2 {
+            color: #333;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        img {
+            max-width: 50px;
+            max-height: 50px;
+            margin-right: 10px;
+        }
+
+        input[type="text"] {
+            width: 40px;
+            text-align: center;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 8px 12px;
+            margin: 5px;
+            text-decoration: none;
+            color: #fff;
+            background-color: #007bff;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .btn-warning {
+            background-color: #ffc107;
+        }
+
+        .btn-primary {
+            background-color: #28a745;
+        }
+
+        .btn-info {
+            background-color: #17a2b8;
+        }
+        </style>
     <title>Carrinho de Compras</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
@@ -134,8 +193,48 @@ if (isset($_GET['acao'])) {
         </form>
     </table>
 </body>
-
 </html>
+// ...
 <?php
-// Restante do seu código...
+if (isset($_POST['finalizaVenda'])) {
+    $cod_cliente = isset($_SESSION['id']) ? $_SESSION['id'] : null;
+    $cod_entrega = isset($_SESSION['id']) ? $_SESSION['id'] : null;
+    $valor_entrega = isset($_SESSION['valor_entrega']) ? $_SESSION['valor_entrega'] : 0; // Defina um valor padrão se não estiver definido
+    $dia = new DateTime(); 
+    $tipo_pagamento = "DINHEIRO";
+    $data_compra = $dia->format('Y-m-d');
+
+    echo $cod_cliente . " - " . $valor_entrega . " - " . $data_compra . " - " . $tipo_pagamento;
+
+    $sql = "INSERT INTO tb_compras(cod_cliente, cod_entrega, valor_entrega, tipo_pagamento, data_compra) VALUES(:c, :e, :v, :tp, :d)";
+
+    $stmip = $pdo->prepare($sql);
+    $stmip->bindValue(":c", $cod_cliente);
+    $stmip->bindValue(":e", $cod_entrega);
+    $stmip->bindValue(":v", $valor_entrega);
+    $stmip->bindValue(":tp", $tipo_pagamento);
+    $stmip->bindValue(":d", $data_compra);
+
+    if ($stmip->execute()) {
+        echo "Venda inserida com sucesso";
+
+        $venda = $pdo->lastInsertId();
+
+        $itens = array(); // Defina $itens como uma matriz vazia
+
+        foreach ($_SESSION['carrinho'] as $id => $qtd) {
+            // Restante do código...
+        }
+
+        // Restante do código...
+
+        unset($_SESSION['carrinho']); // apaga sessão do carrinho
+        unset($_SESSION['valor_entrega']);
+
+    } else {
+        echo "Ocorreu um erro ao inserir";
+    }
+
+    // ...
+}
 ?>
