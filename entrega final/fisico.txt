@@ -54,7 +54,7 @@ cod_compra_produto INT AUTO_INCREMENT,
 cod_compra INTEGER,
 cod_produto INTEGER,
 quantidade INTEGER,
-valor FLOAT(5,2),
+valor FLOAT(10,2),
 PRIMARY KEY(cod_compra_produto),
 FOREIGN KEY (cod_compra) REFERENCES tb_compras(cod_compra),
 FOREIGN KEY (cod_produto) REFERENCES tb_produtos(cod_produto)
