@@ -1,10 +1,18 @@
 
-<-----ALTER TABLE tb_imagens_produtos
+<-----
+ALTER TABLE tb_imagens_produtos
 ADD CONSTRAINT fk_produto
 FOREIGN KEY (cod_produto)
 REFERENCES tb_produtos (cod_produto)
 ON DELETE CASCADE;
-(cascade) --->>IMGPRODUTOS, APOS O DROP TABLE
+
+ALTER TABLE tb_compras_produtos
+ADD CONSTRAINT fk_cod_produto
+FOREIGN KEY (cod_produto)
+REFERENCES tb_produtos (cod_produto)
+ON DELETE CASCADE;
+--->
+
 
 INSERT INTO tb_imagens_produtos (cod_imagem_produto, cod_produto, imagem_produto)VALUES
 ('1','01','container1.jpg')
