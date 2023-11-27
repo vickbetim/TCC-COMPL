@@ -1,9 +1,15 @@
 
 <-----
 ALTER TABLE tb_imagens_produtos
-ADD CONSTRAINT fk_produto
+ADD CONSTRAINT cod_produto
 FOREIGN KEY (cod_produto)
 REFERENCES tb_produtos (cod_produto)
+ON DELETE CASCADE;
+
+ALTER TABLE tb_compras
+ADD CONSTRAINT tb_compras_ibfk_1
+FOREIGN KEY (cod_cliente)
+REFERENCES tb_clientes(cod_cliente)
 ON DELETE CASCADE;
 
 ALTER TABLE tb_compras_produtos
