@@ -1,0 +1,264 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  box-sizing: border-box;
+}
+
+
+nav {
+  background-color: black;
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* Espaço entre logo e itens de navegação */
+  padding: 10px; /* Adicione padding para espaço ao redor do logo e itens */
+}
+
+.logo-image {
+  max-width: 150px;
+  height: auto;
+  align-items: center;
+}
+
+.navigation {
+  list-style-type: none;
+  display: flex;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+
+.navigation li {
+  margin-right: 20px;
+  font-size: 20px;
+}
+
+.navigation a {
+  text-decoration: none;
+  color: white;
+  font-size: 22px;
+  padding: 20px;
+  transition: 0.2s ease-in;
+}
+
+section {
+  padding: 1rem 7%;
+}
+
+.div {
+  background-color: rgb(238, 231, 231);
+}
+
+
+.content {
+  max-width: 60rem;
+  margin: 0 auto;
+  text-align: center;
+}
+
+
+
+
+.section-title {
+  margin-top: 20px;
+  font-size: 36px;
+  font-family: "Arial", sans-serif;
+  color: #000;
+}
+
+.content p {
+  font-size: 25px;
+  font-family: "Arial", sans-serif;
+  color: #333;
+  text-align: justify;
+}
+
+p {
+  margin-bottom: 20px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  box-sizing: border-box;
+}
+
+nav.navbar {
+  background-image: url("logo2.jpg.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: left center;
+  padding-left: 60px; /* Ajusta o espaço à esquerda da imagem */
+  display: flex; /* Usando flexbox para alinhar os links à esquerda */
+  align-items: center; /* Alinha verticalmente os itens */
+  justify-content: flex-start; /* Alinha os itens horizontalmente */
+}
+
+    .carousel-container {
+        position: relative;
+        width: 100%;
+        height: 500px;
+    }
+    .carousel-slide {
+        display: none;
+        text-align: center;
+        height: 100%;
+        position: relative;
+    }
+    .carousel-slide img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    .overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        /* background-color: black;  */
+        /* opacity: 0.8; */
+    }
+    .carousel-indicators {
+        position: absolute;
+        bottom: 20px;
+        left: 0;
+        right: 0;
+        text-align: center;
+    }
+    .carousel-indicator {
+        display: inline-block;
+        width: 10px;
+        height: 10px;
+        background-color: #333;
+        border-radius: 50%;
+        cursor: pointer;
+        margin: 0 5px;
+    }
+    .active {
+        background-color: #f00; /* Cor da bolinha ativa */
+    }
+
+    .centered-button {
+      position: absolute;
+      top: 90%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      padding: 20px 80px;
+      font-size: 40px;
+      background-color: #fff;
+      border: none;
+      cursor: pointer;
+      border-radius: 10px;
+      color: #333;
+  }
+
+  h1 {
+    margin-top: 20px;
+    text-align: center;
+    color: #000;
+}
+
+.alt-font {
+  font-family: "Bebas Neue", sans-serif;
+  letter-spacing: .05em;
+}
+
+
+
+.container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    background-color: #f9f9f9;
+}
+
+.reason {
+    width: 30%;
+    margin: 10px;
+    padding: 20px;
+    border: 1px solid #000;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    background-color: #f9f9f9;
+    color: #000;
+}
+
+.reason:nth-child(3n) {
+    margin-left: 0;
+}
+
+
+
+hr {
+    width: 80%;
+    margin: 20px auto;
+    border: 1px solid #ccc;
+}
+
+/* Estilos apenas para os títulos dentro dos retângulos */
+.reason h2 {
+    text-align: center; /* Centraliza horizontalmente */
+    margin: 0; /* Remove margens padrão dos títulos */
+    font-size: 18px; /* Define o tamanho da fonte para os títulos */
+    color: #333; /* Define a cor do texto dos títulos */
+}
+
+.imagem-container {
+  text-align: center; /* Centralizar a imagem horizontalmente */
+}
+
+.imagem-container img {
+  width: 100%; /* A largura da imagem ocupa toda a largura da tela */
+  height: auto; /* A altura é ajustada automaticamente para manter a proporção */
+}
+
+/* Estilos para o rodapé */
+
+.footer {
+  width: 100%;
+  height: 5%;
+  background-color: #141414;
+  color: #fff;
+  text-align: center;
+  padding: 1rem;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer a {
+  color: #fff;
+  text-decoration: none;
+  margin: 0 1rem;
+}
+
+.footer a:hover {
+  text-decoration: underline;
+  text-align: center;
+}
+
+.footer-links {
+  margin-bottom: 2rem;
+
+}
+#linha-vertical {
+  height: 50px;
+  border-right: 1px solid white;
+  position: absolute;
+  left: 50%;
+}
+
+.social-media-links a {
+  font-size: 1.2rem;
+  margin: 0 0.5rem;
+}
+
+.quadro1 {
+  background-color: #f9f9f9;
+}
