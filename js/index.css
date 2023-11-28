@@ -1,0 +1,531 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  box-sizing: border-box;
+}
+
+nav {
+  background-color: black;
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* Espaço entre logo e itens de navegação */
+  padding: 10px; /* Adicione padding para espaço ao redor do logo e itens */
+}
+
+.logo-image {
+  max-width: 50px;
+  margin-left: 20px;
+}
+
+.navigation {
+  list-style-type: none;
+  display: flex;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+
+.navigation li {
+  margin-right: 20px;
+  font-size: 20px;
+}
+
+.navigation a {
+  text-decoration: none;
+  color: white;
+  font-size: 22px;
+  padding: 20px;
+  transition: 0.2s ease-in;
+}
+.header.fixed-header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000; /* Este valor pode ser ajustado conforme necessário */
+  background-color: #333; /* Cor de fundo desejada para o cabeçalho fixo */
+  /* Adicione outros estilos conforme necessário */
+}
+
+section {
+  padding: 1rem 7%;
+}
+
+.div {
+  background-color: #a9a9a9;
+}
+
+.content {
+  max-width: 60rem;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.section-title {
+  margin-top: 20px;
+  font-size: 36px;
+  font-family: "Arial", sans-serif;
+  color: #000;
+}
+
+.content p {
+  font-size: 25px;
+  font-family: "Arial", sans-serif;
+  color: #333;
+  text-align: justify;
+}
+
+p {
+  margin-bottom: 20px;
+}
+
+nav.navbar {
+  background-image: url("logo2.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: left center;
+  padding-left: 60px; /* Ajusta o espaço à esquerda da imagem */
+  display: flex; /* Usando flexbox para alinhar os links à esquerda */
+  align-items: center; /* Alinha verticalmente os itens */
+  justify-content: flex-start; /* Alinha os itens horizontalmente */
+}
+
+/* Estilos para o rodapé */
+
+.footer {
+  width: 100%;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  padding: 1rem;
+  box-sizing: border-box;
+}
+
+.logo {
+  display: inline-block;
+  vertical-align: middle; /* Alinha verticalmente ao meio */
+}
+
+.logo img {
+  width: 40px;
+}
+
+.footer-links {
+  display: inline-block;
+  vertical-align: middle; /* Alinha verticalmente ao meio */
+}
+
+.footer-links h3 {
+  font-size: 1rem;
+  margin: 0;
+  padding: 10px 0;
+  text-align: center;
+  font-family: "Courier New", Courier, monospace;
+}
+
+.carousel-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.carousel-slide {
+  display: none;
+  text-align: center;
+  height: 100%;
+  position: relative;
+}
+
+.carousel-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  opacity: 0.5;
+}
+
+.carousel-indicators {
+  position: absolute;
+  bottom: 20px;
+  left: 0;
+  right: 0;
+  text-align: center;
+}
+
+.carousel-indicator {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  background-color: #333;
+  border-radius: 50%;
+  cursor: pointer;
+  margin: 0 5px;
+}
+
+.active {
+  background-color: #f00; /* Cor da bolinha ativa */
+}
+
+/* Adicione esta parte no seu CSS */
+
+.centered-button {
+  font-family: Arial, Helvetica, sans-serif;
+  position: absolute;
+  top: 90%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 10px 80px;
+  font-size: 20px;
+  background-color: #fff;
+  border: none;
+  cursor: pointer;
+  border-radius: 10px;
+  color: #333;
+  text-decoration: none; /* Remover sublinhado padrão */
+}
+
+.centered-button.pressed {
+  background-color: #f9f9f9; /* Mudar a cor de fundo para roxo */
+  color: white; /* Mudar a cor do texto para branco */
+}
+
+h1 {
+  margin-top: 20px;
+  text-align: center;
+  color: #000;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.reason {
+  width: 30%;
+  margin: 10px;
+  padding: 20px;
+  border: 1px solid #000;
+  border-radius: 10px;
+  text-align: justify;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  background-color: #f9f9f9;
+  color: #000;
+  margin-top: 10px;
+}
+
+.reason:nth-child(3n) {
+  margin-left: 0;
+}
+
+/* Estilos apenas para os títulos dentro dos retângulos */
+.reason h2 {
+  text-align: center; /* Centraliza horizontalmente */
+  margin: 0; /* Remove margens padrão dos títulos */
+  font-size: 18px; /* Define o tamanho da fonte para os títulos */
+  color: #333; /* Define a cor do texto dos títulos */
+}
+.historia {
+  margin: 20px; /* Ajuste as margens conforme necessário */
+  padding: 20px; /* Ajuste o preenchimento conforme necessário */
+  position: relative;
+  text-align: justify;
+  color: #fff;
+  overflow: hidden;
+  width: 100%; /* Alteração aqui */
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.historia img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.historia .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #448d6f;
+  opacity: 0.7;
+  z-index: 1;
+}
+
+.historia .content {
+  max-width: 60%; /* Ajuste conforme necessário */
+  padding: 20px;
+  box-sizing: border-box;
+  z-index: 2;
+  position: absolute;
+  top: 50%;
+  left: 50%; /* Adiciona left: 50% para centralizar horizontalmente */
+  transform: translate(
+    -50%,
+    -50%
+  ); /* Adiciona esta linha para centralizar verticalmente */
+  text-align: center;
+}
+
+.image-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.historia h3 {
+  font-size: 5rem; /* Ajuste o tamanho da fonte conforme necessário */
+  color: #fff;
+  margin-bottom: 40px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  overflow: hidden; /* Adicione isso para evitar que o texto seja cortado */
+  white-space: nowrap; /* Impede que o texto seja quebrado em várias linhas */
+  text-align: center;
+}
+
+.historia p {
+  font-size: 2rem; /* Ajuste o tamanho da fonte conforme necessário */
+  text-align: center;
+  color: #fff;
+  margin-bottom: 20px;
+}
+
+.image-container {
+  width: 80%; /* ou outro valor desejado */
+  margin-bottom: 20px;
+}
+
+.image {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.image-section {
+  flex-direction: row; /* Altera a direção do flex para linha */
+  justify-content: space-between; /* Distribui os elementos ao longo da linha com espaçamento */
+  align-items: center; /* Alinha os elementos ao centro verticalmente */
+}
+
+.image-container {
+  width: 30%; /* Define a largura desejada para cada imagem */
+}
+
+.image-description {
+  color: black; /* Define a cor do texto para preto */
+  text-align: justify;
+}
+
+/* Estilos para a seção de curiosidades */
+.curiosities-section {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+.curiosity {
+  width: 45%; /* Ajuste conforme necessário para garantir que haja espaço suficiente para cada bloco */
+  margin-bottom: 20px;
+}
+
+.image-container {
+  text-align: center;
+}
+
+.image {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+/* Estilos para o texto dentro de cada bloco de curiosidade */
+.curiosity p {
+  font-size: 16px;
+  color: #333;
+  text-align: justify;
+  margin-top: 10px;
+}
+
+/* Estilos padrão */
+
+/* Estilos para telas menores (por exemplo, dispositivos móveis) */
+@media only screen and (max-width: 600px) {
+  * {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    box-sizing: border-box;
+    font-size: 10px;
+  }
+  nav {
+    background-color: black;
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Espaço entre logo e itens de navegação */
+    padding: 10px; /* Adicione padding para espaço ao redor do logo e itens */
+  }
+
+  .logo-image {
+    max-width: 25px;
+    align-items: center;
+  }
+
+  .navigation {
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    font-size: 10px;
+  }
+
+  .navigation li {
+    margin-right: 20px;
+    font-size: 10px;
+  }
+
+  .navigation a {
+    text-decoration: none;
+    color: white;
+    font-size: 15px;
+    padding: 5px;
+    transition: 0.2s ease-in;
+  }
+  .header.fixed-header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000; /* Este valor pode ser ajustado conforme necessário */
+    background-color: #333; /* Cor de fundo desejada para o cabeçalho fixo */
+    /* Adicione outros estilos conforme necessário */
+  }
+
+  .carousel-slide img {
+    height: auto;
+  }
+
+  .centered-button {
+    font-family: Arial, Helvetica, sans-serif;
+    position: absolute;
+    top: 90%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 6px 40px;
+    font-size: 10px;
+    background-color: #fff;
+    border: none;
+    cursor: pointer;
+    border-radius: 10px;
+    color: #333;
+  }
+  h1 {
+    margin-top: 20px;
+    text-align: center;
+    color: #000;
+    font-size: 15px;
+  }
+
+  .reason {
+    width: 100%;
+  }
+  .historia {
+    margin: 20px; /* Ajuste as margens conforme necessário */
+    padding: 20px; /* Ajuste o preenchimento conforme necessário */
+    position: relative;
+    text-align: justify;
+    color: #fff;
+    overflow: hidden;
+    width: 100%; /* Alteração aqui */
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .historia img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+
+  .historia .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #448d6f;
+    opacity: 0.7;
+    z-index: 1;
+  }
+
+  .historia .content {
+    max-width: 60%; /* Ajuste conforme necessário */
+    padding: 20px;
+    box-sizing: border-box;
+    z-index: 2;
+    position: absolute;
+    top: 50%;
+    left: 50%; /* Adiciona left: 50% para centralizar horizontalmente */
+    transform: translate(
+      -50%,
+      -50%
+    ); /* Adiciona esta linha para centralizar verticalmente */
+    text-align: center;
+  }
+
+  .image-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .historia h3 {
+    font-size: 1rem; /* Ajuste o tamanho da fonte conforme necessário */
+    color: #fff;
+    margin-bottom: 20px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    overflow: hidden; /* Adicione isso para evitar que o texto seja cortado */
+    white-space: nowrap; /* Impede que o texto seja quebrado em várias linhas */
+    text-align: center;
+  }
+
+  .historia p {
+    font-size: 1rem; /* Ajuste o tamanho da fonte conforme necessário */
+    text-align: center;
+    color: #fff;
+    margin-bottom: 20px;
+  }
+
+  .image-container {
+    width: 80%; /* ou outro valor desejado */
+    margin-bottom: 20px;
+  }
+
+  .image {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+  }
+
+  .image-description {
+    font-size: 12px;
+    margin-top: 10px;
+    text-align: justify;
+  }
+}
