@@ -7,13 +7,13 @@ REFERENCES tb_produtos (cod_produto)
 ON DELETE CASCADE;
 
 ALTER TABLE tb_compras
-ADD CONSTRAINT tb_compras_ibfk_1
+ADD CONSTRAINT tb_compras_1
 FOREIGN KEY (cod_cliente)
 REFERENCES tb_clientes(cod_cliente)
 ON DELETE CASCADE;
 
 ALTER TABLE tb_compras_produtos
-ADD CONSTRAINT fk_cod_produto
+ADD CONSTRAINT cod_produto
 FOREIGN KEY (cod_produto)
 REFERENCES tb_produtos (cod_produto)
 ON DELETE CASCADE;
@@ -21,15 +21,15 @@ ON DELETE CASCADE;
 
 
 INSERT INTO tb_imagens_produtos (cod_imagem_produto, cod_produto, imagem_produto)VALUES
-('1','01','container1.jpg')
-('2','02','container15.jpg')
-('3','03','container2.jpg')
-('4','04','container9.jpg')
-('5','05','container11.jpg')
-('6','06','container12.jpg')
-('7','07','container3.jpg')
-('8','08','container16.jpg')
-('9','09','container17.jpg')
+('1','01','container1.jpg'),
+('2','02','container15.jpg'),
+('3','03','container2.jpg'),
+('4','04','container9.jpg'),
+('5','05','container11.jpg'),
+('6','06','container12.jpg'),
+('7','07','container3.jpg'),
+('8','08','container16.jpg'),
+('9','09','container17.jpg');
 
 INSERT INTO tb_produtos (cod_produto, ativo, valor, tamanho, descricao) VALUES
 ('1', 'S', '11500.00', '3x2', 'Container modular em chapa de ferro. Estrutura em tubo 40x40. Porta com dobradiça, quadro e duas portas com cadeados. Teto de chapa lisa de aluzinco. Medidas: 3x1,5x2m.'),
