@@ -8,7 +8,7 @@ DROP TABLE IF EXISTS  tb_cidades;
 CREATE TABLE tb_cidades (
 cod_cidade INT AUTO_INCREMENT PRIMARY KEY,
 nome_cidade VARCHAR(50) NOT NULL COMMENT 'nome da cidade do cliente',  
-estado CHAR(2) CHECK (estado IN ('PR'))  COMMENT 'estado do cliente, fixo Prana'
+estado CHAR(2) CHECK (estado IN ('PR'))  COMMENT 'estado do cliente, fixo PR'
 );
 CREATE TABLE tb_clientes(
 cod_cliente INT AUTO_INCREMENT PRIMARY KEY,
