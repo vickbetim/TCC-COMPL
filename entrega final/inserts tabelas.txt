@@ -20,6 +20,12 @@ ON DELETE CASCADE;
 --->
 
 
+
+INSERT INTO tb_clientes (cod_cliente, cod_cidade, nome, telefone, gmail, cpf, tipocliente, ativo, complemento, rua, numero, bairro, hash_senha) VALUES 
+('17','2797','V', ‘00000000000','v@gmail.com','36548999999', 'C', 'S','v', 'v', '0000000000', 'v','$2y$10$/KdMf3oAfTx4bNKIdjZ4cuG2wkXXlJy50Exg2YN1kLC');
+('19','2801', 'c','00000000000','c@gmail.com','77777777777', 'F', 'S','c', 'c', '00000000000000', 'c', '$2y$10$bpm1y4Xr0PKUfDnSXzSkkeM5WS2s74eQYOVEW.6pKDR');
+
+
 INSERT INTO tb_imagens_produtos (cod_imagem_produto, cod_produto, imagem_produto)VALUES
 ('1','01','container1.jpg'),
 ('2','02','container15.jpg'),
