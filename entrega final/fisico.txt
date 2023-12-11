@@ -7,45 +7,45 @@ DROP TABLE IF EXISTS  tb_cidades;
 
 CREATE TABLE tb_cidades (
 cod_cidade INT AUTO_INCREMENT PRIMARY KEY,
-nome_cidade VARCHAR(50) NOT NULL,  
-estado CHAR(2) CHECK (estado IN ('PR'))
+nome_cidade VARCHAR(50) NOT NULL COMMENT 'nome da cidade do cliente',  
+estado CHAR(2) CHECK (estado IN ('PR'))  COMMENT 'estado do cliente, fixo Prana'
 );
 CREATE TABLE tb_clientes(
 cod_cliente INT AUTO_INCREMENT PRIMARY KEY,
 cod_cidade INT,
-nome VARCHAR(50) NOT NULL,
-telefone BIGINT(11) ZEROFILL,
-gmail VARCHAR(50),
-cpf BIGINT(11) ZEROFILL NOT NULL,
-tipocliente VARCHAR(1) DEFAULT 'C' CHECK (tipocliente IN ('C', 'F')),
-ativo VARCHAR(1) DEFAULT 'S' CHECK (ativo IN ('S', 'N')),
-complemento VARCHAR(11),
-rua VARCHAR(50),
-numero BIGINT(11) ZEROFILL,
-bairro VARCHAR(50),
-hash_senha VARCHAR(255) NOT NULL,
+nome VARCHAR(50) NOT NULL  COMMENT 'nome do cliente',
+telefone BIGINT(11) ZEROFILL  COMMENT 'telefone do cliente',
+gmail VARCHAR(50)  COMMENT 'gmail que o cliente vai se cadastrar',
+cpf BIGINT(11) ZEROFILL NOT NULL  COMMENT 'o cpf do cliente',
+tipocliente VARCHAR(1) DEFAULT 'C' CHECK (tipocliente IN ('C', 'F'))  COMMENT 'o tipo que o usuario vai ser definido C cliente ou F funcionario',
+ativo VARCHAR(1) DEFAULT 'S' CHECK (ativo IN ('S', 'N'))  COMMENT 'se o usuario cadastrado esta ativo, se ele nao estiver nao consegue fazer uma compra ou acessar como funcionario',
+complemento VARCHAR(11)  COMMENT 'sua moradia, condominio, casa...' ,
+rua VARCHAR(50)  COMMENT 'aonde o usuario cadastrado se localiza',
+numero BIGINT(11) ZEROFILL  COMMENT 'numero do complemento, casa, condominio',
+bairro VARCHAR(50)  COMMENT 'informar o bairro em que o usuario se cadastra-ra, casa ou trabalho ',
+hash_senha VARCHAR(255) NOT NULL  COMMENT 'onde o usuario cadastrara uma senha de acesso e ela ficara criptografada',
 FOREIGN KEY (cod_cidade) REFERENCES tb_cidades(cod_cidade)
 );
 CREATE TABLE tb_compras (
 cod_compra INT AUTO_INCREMENT PRIMARY KEY,
 cod_cliente INT,
-cod_entrega VARCHAR(50),
-valor_entrega FLOAT(5,2),
-tipo_pagamento VARCHAR(8) DEFAULT 'DINHEIRO' CHECK (tipo_pagamento IN ('DINHEIRO')),
-data_compra DATE,
+cod_entrega VARCHAR(50)  COMMENT 'codigo da entrega do cliente',
+valor_entrega FLOAT(5,2) COMMENT 'informara o valor que ira ficar a entrega',
+tipo_pagamento VARCHAR(8) DEFAULT 'DINHEIRO' CHECK (tipo_pagamento IN ('DINHEIRO'))  COMMENT 'se o pagamento sera feito por dinhiro',
+data_compra DATE  COMMENT 'a data em que a compra sera feita',
 FOREIGN KEY (cod_cliente) REFERENCES tb_clientes(cod_cliente)
 );
  CREATE TABLE tb_produtos (
 cod_produto INT AUTO_INCREMENT PRIMARY KEY,
-ativo VARCHAR(1) CHECK (ativo IN ('S', 'N')),
-valor FLOAT(10,2),
-tamanho INT,
-descricao VARCHAR(255));
+ativo VARCHAR(1) CHECK (ativo IN ('S', 'N'))  COMMENT 'se o produto nao estiver ativo ele nao aparecera para a compra',
+valor FLOAT(10,2)  COMMENT 'valor do produto',
+tamanho INT  COMMENT 'tamanho do produto (container)',
+descricao VARCHAR(255))  COMMENT 'a descricao do produto';
 
 CREATE TABLE tb_imagens_produtos(
 cod_imagem_produto INT AUTO_INCREMENT PRIMARY KEY,
 cod_produto INT,
-imagem_produto VARCHAR(255),
+imagem_produto VARCHAR(255)  COMMENT 'a imagem que aparecera em seu respectivo produto',
 FOREIGN KEY (cod_produto) REFERENCES tb_produtos(cod_produto)
 );
 
@@ -53,8 +53,8 @@ FOREIGN KEY (cod_produto) REFERENCES tb_produtos(cod_produto)
 cod_compra_produto INT AUTO_INCREMENT,
 cod_compra INTEGER,
 cod_produto INTEGER,
-quantidade INTEGER,
-valor FLOAT(10,2),
+quantidade INTEGER  COMMENT 'quantidade de produto que o cliente desejara',
+valor FLOAT(10,2)  COMMENT 'valor total da compra ou do produto',
 PRIMARY KEY(cod_compra_produto),
 FOREIGN KEY (cod_compra) REFERENCES tb_compras(cod_compra),
 FOREIGN KEY (cod_produto) REFERENCES tb_produtos(cod_produto)
